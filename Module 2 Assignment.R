@@ -77,7 +77,7 @@ k4<-kmeans(employees4dfn, 4, nstart=1000)
 
 str(k4)
 k4
-## Quiz Question 2&3: size of largest cluster: 717. size of smallest cluster 135
+##size of largest cluster: 717. size of smallest cluster 135
 
 
 
@@ -86,9 +86,9 @@ k4
 
 #display cluster statistics
 
-#Quiz Question 4: densest cluster:4, within cluster average distance($average.distance-> 2.32,2.18,1.71,1.47)
+#Quesion 4: densest cluster:4, within cluster average distance($average.distance-> 2.32,2.18,1.71,1.47)
 cluster.stats(dist(employees4dfn, method="euclidean"), k4$cluster)
-#Quiz Question 5: ratio of the average between-cluster(smallest to largest 3 and 2) distance to average within-cluster(smallest cluster 3) 
+#Question 5: ratio of the average between-cluster(smallest to largest 3 and 2) distance to average within-cluster(smallest cluster 3) 
 # average withing cluster 3->2.320545
 #average between cluster 3 and 2 -> 4.039153
 Q5<- 4.039153/2.320545
@@ -124,14 +124,14 @@ clusteravgs <- employeesdfcluster %>%
         group_by(clusterID) %>%
         summarize_all(mean)
 view(clusteravgs)
-#Quiz Question #8:cluster with highest age gets: paid the most per Hourly rate, most education, job involvement,
+#Question #8:cluster with highest age gets: paid the most per Hourly rate, most education, job involvement,
 #monthly rate,most numb of companies worked
 
-#Quiz Question #9: cluster with highest years at company: 
+#Question #9: cluster with highest years at company: 
 ### highest job level,least job satisfaction, most monthly income,highest relationship satisfaction,
 #highest: work life balance,total working years,years current role, years since last promotions, years with current manager
 
-#Quiz Question #10: cluster with highest average salary hike
+#Question #10: cluster with highest average salary hike
 # highest daily rate, highest distance from home, least education, lowest hourly rate, highest job satisfaction, 
 #least number of companies worked, highest performance rating, least relationship satisfaction, least years at company, least years at current
 #role, least years w/ current manager
@@ -167,8 +167,8 @@ dfwardscluster %>%
   group_by(clusterID) %>%
   summarize(n())
 
-#Quiz Question #12, largest cluster:1 489
-#Quiz Question #13, smallest cluster:3 221
+#Question #12: largest cluster:1 489
+#Question #13: smallest cluster:3 221
 
 #8. Calculate variable averages for all non-normalized observations
 
@@ -180,19 +180,19 @@ df2 <- dfwardscluster %>%
 
 view(df2)
 
-# Quiz Question #14: Key Characteristics of cluster 1:
+#Question 14: Key Characteristics of cluster 1:
 
 #highest daily rate, highest distance from home,h education,h hourly rate,h monthly rate, 
 #h num of companies worked,h relationship satisfaction, l years at company,l years at current role,
 #l years at current role, & l years w/ current man
 
 
-#Quiz Question #15:Key Characteristics of Cluster 3
+#Question 15: Key Characteristics of Cluster 3
 #youngest, l daily rate,lowest education, lowest job involment, l job level, l montly income,
 #l number of companies worked, l percent salary hike, l performance rating, l total year worked, 
 # h work life balance, 
 
-#Quiz Question #16: 
+#Question #16: 
 
 
 cluster.stats(dist(employees4dfn, method="euclidean"), dfwardscluster$cluster)
